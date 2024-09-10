@@ -1,4 +1,8 @@
-config:
-  max_hearts: 20
-  min_hearts: 1
-players:
+max_hearts: 20
+ban: "You have lost all your hearts."
+re-role:
+  name: "Rerole Token"
+  description: "50% chance of winning/losing a heart."
+  full-hearts: "Can't re-role at 20 hearts."
+  win: "Congratulations! You gained an extra heart!"
+  lose: "Oh no! You lost a heart."

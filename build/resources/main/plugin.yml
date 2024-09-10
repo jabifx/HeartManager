@@ -2,3 +2,7 @@ name: Heart_Manager
 version: '1.0'
 main: mc.jabifx.heart_Manager.Heart_Manager
 api-version: '1.21'
+commands:
+  hearts:
+    description: "Descripción del comando"
+    usage: "/<command>"
