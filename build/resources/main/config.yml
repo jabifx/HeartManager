@@ -1,0 +1,4 @@
+config:
+  max_hearts: 20
+  min_hearts: 1
+players:
