@@ -1,6 +1,7 @@
 package mc.jabifx.heart_Manager;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -24,10 +25,15 @@ public class Commands implements CommandExecutor {
             if(!sender.isOp()) return true;
             Player player = (Player) sender;
             if(args.length == 1){
-                if(args[0].equalsIgnoreCase("getItem")){
-                    ItemStack item = plugin.createAdvancedItem();
-                    sender.sendMessage(ChatColor.RED + "[HEARTS] "+ ChatColor.WHITE + "Re-role item received.");
-                    plugin.giveItem(player);
+                if(args[0].equalsIgnoreCase("getRerole")){
+                    ItemStack item = plugin.createAdvancedItem(Material.SADDLE, "re-role");
+                    sender.sendMessage(ChatColor.RED + plugin.getConfig().getString("prefix")+ ChatColor.WHITE + "Re-role item received.");
+                    plugin.giveItem(player, item);
+                }
+                else if(args[0].equalsIgnoreCase("getHeart")){
+                    ItemStack item = plugin.createAdvancedItem(Material.HEART_OF_THE_SEA, "heart");
+                    sender.sendMessage(ChatColor.RED + plugin.getConfig().getString("prefix")+ ChatColor.WHITE + "Heart received.");
+                    plugin.giveItem(player, item);
                 }
             }
             else if(args.length == 3){
@@ -36,7 +42,7 @@ public class Commands implements CommandExecutor {
                     Player targetPlayer = getServer().getPlayer(target);
                     if(targetPlayer != null){
                         targetPlayer.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(Integer.parseInt(args[2]) * 2);
-                        sender.sendMessage(ChatColor.RED + "[HEARTS] "+ ChatColor.AQUA + target + ChatColor.WHITE + " has now " + args[2]+" hearts.");
+                        sender.sendMessage(ChatColor.RED + plugin.getConfig().getString("prefix")+ ChatColor.AQUA + target + ChatColor.WHITE + " has now " + args[2]+" hearts.");
                     }
                     else sender.sendMessage(ChatColor.RED + target + "is not online.");
                 }

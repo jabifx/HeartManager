@@ -4,5 +4,17 @@ main: mc.jabifx.heart_Manager.Heart_Manager
 api-version: '1.21'
 commands:
   hearts:
-    description: "Descripción del comando"
-    usage: "/<command>"
+    description: "Commands related to hearts."
+    usage: "/hearts <subcommand>"
+    subcommands:
+      getItem:
+        description: "Obtain a Reroll Token."
+        usage: "/hearts getItem"
+      set:
+        description: "Set the number of hearts for a player."
+        usage: "/hearts set <player> <hearts>"
+        arguments:
+          player:
+            description: "The player whose hearts will be set."
+          hearts:
+            description: "The number of hearts to assign to the player."
