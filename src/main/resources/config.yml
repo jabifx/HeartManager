@@ -1,8 +1,8 @@
-max_hearts: 20
-max_crafts: 8
+max hearts: 20
+uses: 8
 prefix: "[HEARTS] "
 ban: You have lost all your hearts.
-craft: You have reached the limit of crafting hearts.
+uses msg: You can only use crafted hearts when your health is below 8 hearts.
 re-role:
   name: Rerole Token
   description: 50% chance of winning/losing a heart.
@@ -13,4 +13,4 @@ heart:
   name: Heart
   description: Adds a heart to your health bar.
   full-hearts: The heart limit is 20.
-crafting:
+  added: You added a heart to yourself.

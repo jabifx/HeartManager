@@ -64,7 +64,7 @@ public final class Heart_Manager extends JavaPlugin {
 
     public boolean adjustPlayerHealth(Player player, double delta) {
         double newHealth = player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue() + delta;
-        if (newHealth <= getConfig().getInt("max_hearts") * 2 && newHealth > 0) {
+        if (newHealth <= getConfig().getInt("max hearts") * 2 && newHealth > 0) {
             player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(newHealth);
             if(delta == 2) player.setHealth(newHealth);
             return true;
@@ -80,7 +80,7 @@ public final class Heart_Manager extends JavaPlugin {
 
     public boolean gamble(Player player){
         double playerMaxHealth = player.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue();
-        if(playerMaxHealth + 2 > getConfig().getInt("max_hearts") * 2){
+        if(playerMaxHealth + 2 > getConfig().getInt("max hearts") * 2){
             player.sendMessage(ChatColor.RED + getConfig().getString("prefix")+ ChatColor.WHITE + getConfig().getString("re-role.full-hearts"));
             return false;
         }
@@ -97,18 +97,5 @@ public final class Heart_Manager extends JavaPlugin {
             }
             return true;
         }
-    }
-
-    public boolean isSameItem(ItemStack item1, ItemStack item2) {
-        if (item1 == null || item2 == null) {
-            return false;
-        }
-        if (item1.getType() != item2.getType()) {
-            return false;
-        }
-        if (!item1.hasItemMeta() || !item2.hasItemMeta()) {
-            return false;
-        }
-        return item1.getItemMeta().equals(item2.getItemMeta());
     }
 }

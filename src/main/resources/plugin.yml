@@ -7,9 +7,12 @@ commands:
     description: "Commands related to hearts."
     usage: "/hearts <subcommand>"
     subcommands:
-      getItem:
+      getRerole:
         description: "Obtain a Reroll Token."
-        usage: "/hearts getItem"
+        usage: "/hearts getRerole"
+      getHeart:
+        description: "Obtain a Heart Token."
+        usage: "/hearts getHeart"
       set:
         description: "Set the number of hearts for a player."
         usage: "/hearts set <player> <hearts>"
