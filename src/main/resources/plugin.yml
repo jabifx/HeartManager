@@ -3,6 +3,9 @@ version: '1.0'
 main: mc.jabifx.heart_Manager.Heart_Manager
 api-version: '1.21'
 commands:
+  withdraw:
+    description: "Command to withdraw hearts"
+    usage: "/withdraw <amount>"
   hearts:
     description: "Commands related to hearts."
     usage: "/hearts <subcommand>"

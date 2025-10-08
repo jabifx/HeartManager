@@ -1,8 +1,25 @@
 max hearts: 20
+craft revive: true
 uses: 8
 prefix: "[HEARTS] "
 ban: You have lost all your hearts.
 uses msg: You can only use crafted hearts when your health is below 8 hearts.
+withdraw:
+  command: withdraw
+  usage: "Usage: /withdraw <amount>"
+  positive-number: Amount must be a positive number.
+  exceed-max: Cannot withdraw more than you have ({max} hearts).
+  withdraw-fail: Unable to withdraw hearts.
+  withdraw-success: Successfully withdrawn {amount} hearts!
+heart recipe:
+  shape:
+    - "DTD"
+    - "TNT"
+    - "DTD"
+  ingredients:
+    D: DIAMOND_BLOCK
+    T: TOTEM_OF_UNDYING
+    N: NETHERITE_INGOT
 re-role:
   name: Rerole Token
   description: 50% chance of winning/losing a heart.
@@ -14,3 +31,12 @@ heart:
   description: Adds a heart to your health bar.
   full-hearts: The heart limit is 20.
   added: You added a heart to yourself.
+  full: You have reached the maximum number of hearts! You are given a Heart item instead.
+revive:
+  name: Revive
+  description: Revives a player.
+  disabled: The crafting of revive item is disabled!
+  msg: has been revived!
+  no banned: No one has died permanently!
+to-revive: null
+dead: null

@@ -13,11 +13,8 @@ import static org.bukkit.Bukkit.getServer;
 
 public class Commands implements CommandExecutor {
 
-    private Heart_Manager plugin;
+    private final Heart_Manager plugin = Heart_Manager.getInstance();
 
-    public Commands(Heart_Manager plugin) {
-        this.plugin = plugin;
-    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -26,14 +23,27 @@ public class Commands implements CommandExecutor {
             Player player = (Player) sender;
             if(args.length == 1){
                 if(args[0].equalsIgnoreCase("getRerole")){
-                    ItemStack item = plugin.createAdvancedItem(Material.SADDLE, "re-role");
+                    ItemStack item = ItemUtils.createAdvancedItem(Material.SADDLE, "re-role", 1);
                     sender.sendMessage(ChatColor.RED + plugin.getConfig().getString("prefix")+ ChatColor.WHITE + "Re-role item received.");
-                    plugin.giveItem(player, item);
+                    ItemUtils.giveItem(player, item);
                 }
                 else if(args[0].equalsIgnoreCase("getHeart")){
-                    ItemStack item = plugin.createAdvancedItem(Material.HEART_OF_THE_SEA, "heart");
+                    ItemStack item = ItemUtils.createAdvancedItem(Material.HEART_OF_THE_SEA, "heart", 1);
                     sender.sendMessage(ChatColor.RED + plugin.getConfig().getString("prefix")+ ChatColor.WHITE + "Heart received.");
-                    plugin.giveItem(player, item);
+                    ItemUtils.giveItem(player, item);
+                }
+            }
+            else if(args.length == 2){
+                if(args[0].equalsIgnoreCase("revive")){
+                    if (args[1].equalsIgnoreCase("true")){
+                        plugin.getConfig().set("craft revive", true);
+                        sender.sendMessage(ChatColor.RED + plugin.getConfig().getString("prefix") + ChatColor.WHITE + "Revive crafting is now enabled!");
+                    }
+                    else if (args[1].equalsIgnoreCase("false")) {
+                        plugin.getConfig().set("craft revive", false);
+                        sender.sendMessage(ChatColor.RED + plugin.getConfig().getString("prefix") + ChatColor.WHITE + "Revive crafting is now disabled!");
+                    }
+                    plugin.saveConfig();
                 }
             }
             else if(args.length == 3){
