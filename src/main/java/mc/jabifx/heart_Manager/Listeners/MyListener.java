@@ -1,5 +1,10 @@
-package mc.jabifx.heart_Manager;
+package mc.jabifx.heart_Manager.Listeners;
 
+import mc.jabifx.heart_Manager.*;
+import mc.jabifx.heart_Manager.Utils.GambleManager;
+import mc.jabifx.heart_Manager.Utils.HealthManager;
+import mc.jabifx.heart_Manager.Utils.ItemUtils;
+import mc.jabifx.heart_Manager.Utils.ReviveManager;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;

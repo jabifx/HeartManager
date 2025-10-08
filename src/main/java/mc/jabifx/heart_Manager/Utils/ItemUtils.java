@@ -1,5 +1,6 @@
-package mc.jabifx.heart_Manager;
+package mc.jabifx.heart_Manager.Utils;
 
+import mc.jabifx.heart_Manager.Heart_Manager;
 import org.bukkit.*;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;

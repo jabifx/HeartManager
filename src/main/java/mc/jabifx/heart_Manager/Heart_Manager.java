@@ -1,5 +1,9 @@
 package mc.jabifx.heart_Manager;
 
+import mc.jabifx.heart_Manager.Commands.Commands;
+import mc.jabifx.heart_Manager.Commands.WithdrawCommand;
+import mc.jabifx.heart_Manager.Listeners.MyListener;
+import mc.jabifx.heart_Manager.Utils.RecipeManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Heart_Manager extends JavaPlugin {

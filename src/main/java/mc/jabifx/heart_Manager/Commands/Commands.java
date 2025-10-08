@@ -1,5 +1,7 @@
-package mc.jabifx.heart_Manager;
+package mc.jabifx.heart_Manager.Commands;
 
+import mc.jabifx.heart_Manager.Heart_Manager;
+import mc.jabifx.heart_Manager.Utils.ItemUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
